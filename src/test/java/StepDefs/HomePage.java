@@ -1,8 +1,11 @@
 package StepDefs;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
@@ -18,8 +21,17 @@ public class HomePage {
 
     public WebDriver driver;
 
-    @FindBy(className = "btn btn-large btn-primary btn-recaptcha")
-    public WebElement registerButton;
+    // registerButton = driver.findElement(By.name("Register"));
+   // @FindBy(id = "registration")
+   // @FindAll(@FindBy(className = "btn btn-large btn-primary btn-recaptcha"))
+
+
+    //@FindBy(className = "btn btn-large btn-primary btn-recaptcha")
+    //@FindBy(css = "input.btn.btn-large.btn-primary.btn-recaptcha")
+    //@FindBy(css = "btn btn-large btn-primary btn-recaptcha")
+
+    //public WebElement registerButton = driver.findElement(By.xpath("//input[@class='btn btn-large btn-primary btn-recaptcha']"));
+
 
     public HomePage(WebDriver driver)
     {
@@ -52,6 +64,9 @@ public class HomePage {
 
     public void clickRegister()
     {
+        WebElement registerButton = driver.findElement(By.xpath("//input[@class='btn btn-large btn-primary btn-recaptcha']"));
+
+        System.out.println(registerButton);
         registerButton.click();
         this.openPage();
     }
