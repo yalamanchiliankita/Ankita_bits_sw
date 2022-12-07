@@ -2,8 +2,11 @@ package StepDefs;
 
 import org.openqa.selenium.WebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class AbstractStepDefs {
@@ -30,9 +33,18 @@ public class AbstractStepDefs {
         Driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
          */
 
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
+//        WebDriverManager.firefoxdriver().setup();
+//        driver = new FirefoxDriver();
+//        driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
+//        homePage = new HomePage(driver);
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+//        options.setHeadless(true);
+//        options.addArguments("--no-sandbox");
+        driver = new ChromeDriver(options);
+      //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAIT_TIME));
+
+        //driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
         homePage = new HomePage(driver);
     }
 
