@@ -1,7 +1,9 @@
 Feature: feature to test login functionality
 
-  Scenario: Check login is unsuccessful with invalid credentials
+  Background:
     Given browser is open
+
+  Scenario: Check login is unsuccessful with invalid credentials
     And user is on login page
     When user enters username and password
     Then user is navigated to the same page
