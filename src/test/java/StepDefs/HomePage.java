@@ -18,6 +18,9 @@ public class HomePage {
 
     public WebDriver driver;
 
+    @FindBy(className = "btn btn-large btn-primary btn-recaptcha")
+    public WebElement registerButton;
+
     public HomePage(WebDriver driver)
     {
         this.driver = driver;
@@ -45,6 +48,12 @@ public class HomePage {
     {
         System.out.println("Driver Navigated to the Client Page");
         driver.navigate().to("https://phptravels.org/clientarea.php");
+    }
+
+    public void clickRegister()
+    {
+        registerButton.click();
+        this.openPage();
     }
 
 }
