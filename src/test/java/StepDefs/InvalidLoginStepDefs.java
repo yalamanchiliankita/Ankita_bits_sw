@@ -11,6 +11,7 @@ public class InvalidLoginStepDefs extends AbstractStepDefs {
     @When("user enters username and password")
     public void user_enters_username_and_password() {
         // Write code here that turns the phrase above into concrete actions
+        // hardcoded email and password to check
         homePage.inputEmail.sendKeys("Ankita@gmail.com");
         homePage.inputPassword.sendKeys("12345");
     }

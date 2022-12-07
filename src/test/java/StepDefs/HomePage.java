@@ -30,6 +30,7 @@ public class HomePage {
 
     public void openPage()
     {
+        System.out.println("Opening Login Page");
         driver.navigate().to("https://phptravels.org/login");
         PageFactory.initElements(driver, this);
     }
@@ -37,10 +38,12 @@ public class HomePage {
     public void clickLogin()
     {
         loginButton.click();
+        System.out.println("Login Button Clicked");
     }
 
     public void clientPage()
     {
+        System.out.println("Driver Navigated to the Client Page");
         driver.navigate().to("https://phptravels.org/clientarea.php");
     }
 

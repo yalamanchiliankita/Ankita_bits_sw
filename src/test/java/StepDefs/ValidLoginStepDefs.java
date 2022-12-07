@@ -18,6 +18,7 @@ public class ValidLoginStepDefs extends AbstractStepDefs {
 
     @Then("user is navigated to the client page")
     public void user_navigated_to_client_page(){
+        System.out.println("Successful login User Directed to the Client Page");
         homePage.clientPage();
         //Driver.close();
        // Driver.quit();

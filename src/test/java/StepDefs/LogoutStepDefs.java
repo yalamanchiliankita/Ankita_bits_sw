@@ -17,6 +17,7 @@ public class LogoutStepDefs extends AbstractStepDefs{
     @When("user clicks on logout")
     public void click_logout()
     {
+        System.out.println("Logging out from the client page");
         Driver.findElement(By.id("Secondary_Sidebar-Client_Shortcuts-Logout")).click();
     }
 
