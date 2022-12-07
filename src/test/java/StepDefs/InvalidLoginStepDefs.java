@@ -8,10 +8,12 @@ public class InvalidLoginStepDefs extends AbstractStepDefs {
 
     WebDriver Driver = homePage.driver;
 
-    @When("user enters username and password")
+    @When("user enters credentials")
     public void user_enters_username_and_password() {
         // Write code here that turns the phrase above into concrete actions
         // hardcoded email and password to check
+        System.out.println("User entered incorrect credentials");
+        System.out.println("Remains at the same login page");
         homePage.inputEmail.sendKeys("Ankita@gmail.com");
         homePage.inputPassword.sendKeys("12345");
     }
