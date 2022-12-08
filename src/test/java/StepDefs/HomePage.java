@@ -63,7 +63,6 @@ public class HomePage {
     public void clickRegister()
     {
         WebElement registerButton = driver.findElement(By.xpath("//input[@class='btn btn-large btn-primary btn-recaptcha']"));
-
         System.out.println(registerButton);
         registerButton.click();
         this.openPage();
